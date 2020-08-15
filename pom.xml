@@ -29,6 +29,20 @@
             <version>1.18.12</version>
         </dependency>
 
+<!--        &lt;!&ndash;servlet&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>servlet-api</artifactId>-->
+<!--            <version>2.5</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash;jstl&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>jstl</artifactId>-->
+<!--            <version>1.2</version>-->
+<!--        </dependency>-->
+
         <!-- springboot tomcat 支持 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
