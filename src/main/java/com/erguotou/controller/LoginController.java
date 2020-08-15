@@ -2,26 +2,28 @@ package com.erguotou.controller;
 
 import com.erguotou.pojo.User;
 import com.erguotou.result.Result;
+import com.erguotou.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
-import java.util.Objects;
 
 @RestController
 public class LoginController {
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping("/api/login")
     @CrossOrigin
-    public Result login(@RequestBody User user){
-        System.out.println(user);
-        String username = user.getUserName();
+    public Result login(@RequestBody User requestUser){
+        String username = requestUser.getUsername();
         username = HtmlUtils.htmlEscape(username);
 
-        if (!Objects.equals("admin", username) || !Objects.equals("123456", user.getUserPassword())){
-            String messsage = "账号密码错误";
-            System.out.println("test");
+        User user = userService.get(username, requestUser.getPassword());
+        if (null == user) {
             return new Result(400);
-        }else{
+        } else {
             return new Result(200);
         }
     }
