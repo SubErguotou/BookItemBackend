@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 public class LoginInterceptor implements HandlerInterceptor {
     @Override
 //    这个方法是一个拦截链
+//    返回值：true表示继续流程（如调用下一个拦截器或处理器）；
+//    false表示流程中断（如登录检查失败），不会继续调用其他的拦截器或处理器，此时我们需要通过response来产生响应；
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 //        获取项目路径
         HttpSession session = request.getSession();
