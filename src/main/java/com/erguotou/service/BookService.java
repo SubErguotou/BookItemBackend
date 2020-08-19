@@ -36,4 +36,9 @@ public class BookService {
         Category category = categoryService.get(cid);
         return bookDAO.findAllByCategory(category);
     }
+//    以光健字来查询书籍
+    public List<Book> SearchKey(String keywords){
+        return bookDAO.findAllByTitleLikeOrAuthorLike('%'+keywords+'%', '%'+keywords+'%');
+    }
+
 }

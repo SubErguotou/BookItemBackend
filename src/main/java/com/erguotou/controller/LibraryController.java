@@ -36,4 +36,13 @@ public class LibraryController {
             return list();
         }
     }
+//    根据标题或者作者查询
+    @GetMapping(value = "/api/search")
+    public List<Book> searchResult(@RequestParam("keywords")String keywords){
+        if("".equals(keywords)){
+            return bookService.list();
+        }else {
+            return bookService.SearchKey(keywords);
+        }
+    }
 }

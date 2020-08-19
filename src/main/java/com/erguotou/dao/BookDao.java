@@ -9,5 +9,6 @@ import java.util.List;
 public interface BookDao extends JpaRepository<Book, Integer> {
 //    category 对象的 id 属性作为 cid 进行了查询
     List<Book> findAllByCategory(Category category);
+//    根据标题或作者进行模糊查询
     List<Book> findAllByTitleLikeOrAuthorLike(String keyword1, String keyword2);
 }
