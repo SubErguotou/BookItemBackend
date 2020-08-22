@@ -27,8 +27,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "F:\\慢慢磨\\BookItem\\backend\\img");
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
-
+    
 
 }

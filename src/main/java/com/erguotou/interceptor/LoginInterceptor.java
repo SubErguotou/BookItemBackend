@@ -27,8 +27,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 //        获取请求的URI
         String uri = request.getRequestURI();
-        System.out.println("uri:======>"+uri);
-        System.out.println("contextPath==========>"+contextPath);
+//        System.out.println("uri:======>"+uri);
+//        System.out.println("contextPath==========>"+contextPath);
 
 //        使用remove方法移除项目路径中的匹配uri，比如：http://localhost:8080/testproject/test 就移除/testproject/test
         uri = StringUtils.remove(uri, contextPath+"/");
